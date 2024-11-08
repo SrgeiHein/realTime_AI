@@ -13,13 +13,21 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app uses the microphone to recognize speech."
+      },
+      "bundleIdentifier": "com.sergeihein.realTime"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "RECORD_AUDIO"
+      ],
+      "package": "com.sergeihein.realTime_AI"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +39,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ab53d516-de50-4350-a633-dd0eff23181f"
+      }
+    },
+    "owner": "sergeihein"
   }
 }
