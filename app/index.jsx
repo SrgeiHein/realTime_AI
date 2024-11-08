@@ -87,7 +87,7 @@ export default function App() {
   const transcribeAudio = async (uri) => {
     try {
       setIsTranscribing(true);
-      const apiKey = "OPEM_API_KEY";
+      // const apiKey = "OPEM_API_KEY";
 
       const formData = new FormData();
       formData.append("file", {
