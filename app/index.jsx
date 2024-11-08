@@ -84,37 +84,37 @@ export default function App() {
     }
   };
 
-  const transcribeAudio = async (uri) => {
-    try {
-      setIsTranscribing(true);
-      // const apiKey = "OPEM_API_KEY";
+  // const transcribeAudio = async (uri) => {
+  //   try {
+  //     setIsTranscribing(true);
+  //     // const apiKey = "OPEM_API_KEY";
 
-      const formData = new FormData();
-      formData.append("file", {
-        uri: uri,
-        name: "audio.wav",
-        type: "audio/wav",
-      });
-      formData.append("model", "whisper-1");
+  //     const formData = new FormData();
+  //     formData.append("file", {
+  //       uri: uri,
+  //       name: "audio.wav",
+  //       type: "audio/wav",
+  //     });
+  //     formData.append("model", "whisper-1");
 
-      const response = await axios.post(
-        "https://api.openai.com/v1/audio/transcriptions",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
+  //     const response = await axios.post(
+  //       "https://api.openai.com/v1/audio/transcriptions",
+  //       formData,
+  //       {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //           Authorization: `Bearer ${apiKey}`,
+  //         },
+  //       }
+  //     );
 
-      setTranscribedText((prevText) => prevText + " " + response.data.text);
-    } catch (err) {
-      console.error("Error transcribing audio", err);
-    } finally {
-      setIsTranscribing(false);
-    }
-  };
+  //     setTranscribedText((prevText) => prevText + " " + response.data.text);
+  //   } catch (err) {
+  //     console.error("Error transcribing audio", err);
+  //   } finally {
+  //     setIsTranscribing(false);
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
